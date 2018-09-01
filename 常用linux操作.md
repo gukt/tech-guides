@@ -284,3 +284,27 @@ brew services restart jenkins
 brew services list
 ```
 
+
+
+### 将本地更改提交到远程仓库
+
+```sh
+#先创建远程仓库(假设为my-notes)
+#创建好后，克隆到本地
+git clone https://github.com/gukt/my-notes.git
+
+#在当前执行命令的目录生成了一个my-notes的目录
+#将文件添加到my-notes目录或对其中的文件进行更改
+#添加所有新增的文件到本地仓库
+git add .
+
+#查看当前状态
+git status
+
+#提交更改
+git commit -m 'init import'
+
+#push到远程仓库
+git push
+```
+
