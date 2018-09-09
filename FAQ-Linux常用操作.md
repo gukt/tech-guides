@@ -17,6 +17,32 @@ java    70067 ktgu  219u  IPv6 0x60e648c40af24f2d      0t0  TCP *:13301 (LISTEN)
 
 
 
+### 查看磁盘占用情况
+
+```sh
+#查看根目录磁盘占用情况
+df -h /
+/dev/vda1        40G   40G     0  100% /
+devtmpfs        1.9G     0  1.9G    0% /dev
+tmpfs           1.9G     0  1.9G    0% /dev/shm
+tmpfs           1.9G  380K  1.9G    1% /run
+tmpfs           1.9G     0  1.9G    0% /sys/fs/cgroup
+tmpfs           380M     0  380M    0% /run/user/0
+
+#搜索指定目录中超出指定大小的文件
+find / -type f -size +500M
+/var/log/jenkins/jenkins.log-20180907
+/var/log/jenkins/jenkins.log
+#查看这两个文件有多大
+ll -h /var/log/jenkins/jenkins.log
+-rw-r--r-- 1 jenkins jenkins 23G 9月   8 12:00 /var/log/jenkins/jenkins.log
+
+```
+
+
+
+
+
 ### 添加软连接，指向目录
 
 ```sh
