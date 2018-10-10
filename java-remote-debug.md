@@ -1,4 +1,4 @@
-#### 配置Remote debug configuration
+### 配置Remote debug configuration
 
 打开IDE -> Run -> Edit Configurations，点击“+“，选择”Remote"，出现如下界面：
 
@@ -22,7 +22,7 @@ Port填写远程服务器监听端口
 
 
 
-#### 启动远程进程
+### 启动远程进程
 
 ```
 java -jar -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 /data/nn_game/game-server.jar
@@ -30,7 +30,7 @@ java -jar -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 
 
 
 
-#### 启动本地调试
+### 启动本地调试
 
 启动之前配置的Remote debug configuration,当控制台出现如下信息时表示本地调试进程已经连接到远程
 
