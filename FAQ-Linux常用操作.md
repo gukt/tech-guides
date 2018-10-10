@@ -1,16 +1,23 @@
 ### 查看端口占用情况
 
 ```sh
-[root@biz1 ~]# netstat -tulpen
+#查看所有TCP端口
+netstat -ntpl
 Active Internet connections (only servers)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State       User       Inode      PID/Program name
-tcp        0      0 0.0.0.0:3306            0.0.0.0:*               LISTEN      1000       46174      5179/mysqld
-tcp        0      0 127.0.0.1:11211         0.0.0.0:*               LISTEN      1003       13189      995/memcached
-tcp        0      0 127.0.0.1:6379          0.0.0.0:*               LISTEN      1002       13927      
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.0.1:6379          0.0.0.0:*               LISTEN      23079/redis-server
+tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      21231/java
+tcp        0      0 0.0.0.0:8082            0.0.0.0:*               LISTEN      26389/java
+tcp        0      0 0.0.0.0:8084            0.0.0.0:*               LISTEN      10339/java
+tcp        0      0 0.0.0.0:13301           0.0.0.0:*               LISTEN      10339/java
+tcp        0      0 0.0.0.0:8085            0.0.0.0:*               LISTEN      12466/java
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      21850/sshd
+tcp        0      0 0.0.0.0:3302            0.0.0.0:*               LISTEN      10339/java
+tcp6       0      0 :::3306                 :::*                    LISTEN      21533/mysqld     
 ```
 
-```
-tgus-mac:server ktgu$  lsof -i tcp:13301
+```sh
+lsof -i tcp:13301
 COMMAND   PID USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
 java    70067 ktgu  219u  IPv6 0x60e648c40af24f2d      0t0  TCP *:13301 (LISTEN)
 ```
@@ -38,8 +45,6 @@ ll -h /var/log/jenkins/jenkins.log
 -rw-r--r-- 1 jenkins jenkins 23G 9月   8 12:00 /var/log/jenkins/jenkins.log
 
 ```
-
-
 
 
 
@@ -366,4 +371,20 @@ Java(TM) SE Runtime Environment (build 1.8.0_51-b16)
 ```
 
 
+
+### Springboot以jar包方式运行时指定参数
+
+```shell
+#指定main函数参数
+java -jar foo.jar p1 p2
+#上述参数p1,p2通过main函数获取
+
+#覆盖application.properties中指定的参数值
+java -jar foo.jar --p1=v1 --p2=v2
+
+#指定System.properties
+java -jar foo.jar -Dp1=v1 -Dp2=v2
+#上述指定的参数可通过System.getProperty("p1")获取
+
+```
 

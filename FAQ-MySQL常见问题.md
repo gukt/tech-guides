@@ -294,6 +294,30 @@ where QUARTER(createTime) = QUARTER(DATE_SUB(now(), interval 1 QUARTER));
 
 
 
+### 迁移数据到另一个库中的表
+
+```mysql
+insert into db1.tb1(f1, f2) select F1, F2 from db2.tb1 limit 0, 100
+```
+
+
+
+### 使用mysqldump备份
+
+```sh
+/usr/local/bin/mysqldump --result-file=/Users/ktgu/yfs_09030012_dump.sql yfs t_posts --user=root --host=laogu.io --port=3306
+```
+
+
+
+### 使用mysqldump恢复数据
+
+```sh
+/usr/local/bin/mysql --database=nn_game --user=root --host=127.0.0.1 --port=3306 < /Users/ktgu/yfs_09300012_dump.sql
+```
+
+
+
 ---
 
 ### TODO：
