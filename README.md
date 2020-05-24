@@ -1,2 +1,1 @@
-# my-notes
-my  notes 
+# 记录我的工作与生活
