@@ -2,11 +2,11 @@
 
 
 
-# 运行MariaDB容器
+# 1、运行MariaDB容器
 
 镜像：https://hub.docker.com/_/mariadb/
 
-```sh
+```bash
 # docker run \
 	--name mariadb \
 	-p 13306:3306 \
@@ -22,16 +22,16 @@
 
 
 
-# 连接MariaDB
+# 2、连接MariaDB
 
-```sh
+```bash
 # docker exec -it mariadb mysql -uroot -p
 # 输入密码
 ```
 
 
 
-# 注意点
+# 3、注意点
 
 1. 映射data文件到宿主机的好处是随时可以删除容器再重建（docker rm -f mariadb)，数据一切都正常。
 2. 如果想使用mysql，只需要将mariadb替换成mysql即可。
