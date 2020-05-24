@@ -8,7 +8,7 @@
 
      
 
-# 1、创建并运行容器
+## 1、创建并运行容器
 
 以下提供一键脚本运行nginx容器。
 
@@ -62,7 +62,7 @@ set +x \
 
 
 
-# 2、测试是否正常工作
+## 2、测试是否正常工作
 
 ```sh
 #在host机器上运行,显示'it works'表示nginx已正常工作
@@ -72,7 +72,7 @@ it works
 
 
 
-# 3、重新加载nginx配置
+## 3、重新加载nginx配置
 
 可直接在宿主机上以交互方式运行容器中的`nginx -s reload`命令：
 
@@ -88,6 +88,6 @@ docker kill -s HUP nginx
 
 
 
-# 4、参考
+## 4、参考
 
 [^1]:https://github.com/gukt/docker-images/blob/master/nginx/alpine/Dockerfile 

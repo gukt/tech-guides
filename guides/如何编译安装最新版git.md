@@ -26,6 +26,8 @@ $ tar xvf v2.9.2.tar.gz
 $ cd git-2.9.2
 ```
 
+
+
 ## 2、编译，安装
 
 ```sh
@@ -46,12 +48,16 @@ $ export PATH=/usr/local/git/bin:$PATH
 $ source /etc/profile
 ```
 
+
+
 ## 3、检查是否安装成功
 
 ```bash
 $ git version
 $ git version 2.9.2
 ```
+
+
 
 ## 4、删除安装文件
 

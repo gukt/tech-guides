@@ -4,7 +4,7 @@
 
 
 
-# 1、前提条件
+## 1、前提条件
 
 因为注册美区ID时会判断访问IP是否在美国，所以我们需要有个美国节点的代理来上网（如何使用代理上网，请自行百度）。
 
@@ -12,7 +12,7 @@
 
 
 
-# 2、注册新的Apple ID
+## 2、注册新的Apple ID
 
 做好了以上前提准备工作后，下面就可以开始注册美区的新Apple ID了。
 
@@ -27,7 +27,7 @@
 
 
 
-# 3、完善Payment信息
+## 3、完善Payment信息
 
 如果你需要购买App，还需要完善Payment信息。
 
@@ -49,7 +49,7 @@
 
 
 
-# 4、给账号充值
+## 4、给账号充值
 
 此时，账号里还没有钱，而且也没有绑定VISA信用卡或paypal账号，那要如何购买App呢？最简单的办法是通过Gift Card给账号充值。
 
@@ -57,7 +57,7 @@
 
 
 
-## 1. 购买Gift Card：
+### 1. 购买Gift Card：
 
 1. 登陆官网：https://www.apple.com/shop/gift-cards，找到"App Store & iTunes Gift Cards by Email"，点击下面的 [Email a gift card](https://www.apple.com/shop/gift-cards/itunes-electronic) (或者读者直接点此链接)
 2. 随便选择一个设计样式（Select a design）
@@ -72,7 +72,7 @@
 
 
 
-## 2. 兑换Gift Card:
+### 2. 兑换Gift Card:
 
 1. 打开邮件，点击”Print Gift Card"（保持在预览界面，不用选择保存，因为这个界面里能看到序列号，下一步扫码中直接扫这个预览界面即可）
 2. 打开手机App Store, 进入账户，选择"Redeem Gift Card or Code"，选择“User Camera”
