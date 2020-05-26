@@ -7,11 +7,11 @@
 镜像：https://hub.docker.com/_/mariadb/
 
 ```bash
-# docker run \
+docker run \
 	--name mariadb \
 	-p 13306:3306 \
 	-v /data/mariadb/data:/var/lib/mysql \
-  -v /data/mariadb-test/conf:/etc/mysql/conf.d \
+  -v /data/mariadb/conf:/etc/mysql/conf.d \
 	-e MYSQL_ROOT_PASSWORD=1234+aaaa \
 	-e TZ=Asia/Shanghai \
 	-d \
@@ -25,8 +25,8 @@
 ## 2、连接MariaDB
 
 ```bash
-# docker exec -it mariadb mysql -uroot -p
-# 输入密码
+docker exec -it mariadb mysql -uroot -p
+输入密码
 ```
 
 
@@ -35,3 +35,4 @@
 
 1. 映射data文件到宿主机的好处是随时可以删除容器再重建（docker rm -f mariadb)，数据一切都正常。
 2. 如果想使用mysql，只需要将mariadb替换成mysql即可。
+

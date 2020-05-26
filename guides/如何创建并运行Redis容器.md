@@ -1,13 +1,13 @@
 搜索redis镜像，使用stars数最高的那个
 
 ```sh
-# docker search redis
+docker search redis
 ```
 
 运行redis容器
 
 ```sh
-# docker run \
+docker run \
 	-d \
 	--name redis \
 	--restart always \
@@ -18,6 +18,6 @@
 客户端连接测试
 
 ```sh
-# docker exec -it redis redis-cli
+docker exec -it redis redis-cli
 ```
 
