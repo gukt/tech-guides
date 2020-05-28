@@ -2,7 +2,7 @@
 
 
 
-# 概述
+# 1、概述
 
 服务器名称使用server_name指令定义，用来决定哪个server块执行请求，它可以定义为三种形式：
 
@@ -19,7 +19,7 @@
 
 
 
-# 通配符名称
+# 2、通配符名称
 
 通配符名称中包含`*`，它**只能出现在名称的开头或者结尾**，且必须以.为边界，这些通配符名称都可以用正则来表示。星号可以匹配多个名称部分，比如`*.example.org`可以匹配`www.example.org`，还可以匹配`www.sub.example.org`。
 
@@ -33,7 +33,7 @@
 
 
 
-# 正则表达式名称
+# 3、正则表达式名称
 
 nginx使用的正则表达式和PCRE兼容，以波浪号`~`开头，否则会把他当成精确名称对待。
 
@@ -58,7 +58,7 @@ server {
 
 
 
-# 混合的名称
+# 4、混合的名称
 
 server_name指令可以指定多个名称，用空格隔开，`""`表示匹配`header`中没有`Host`为空的请求。
 
@@ -113,7 +113,7 @@ server {
 
 
 
-# 最佳实践
+# 5、最佳实践
 
 对于1：精确的名称，2：以`*`开头的通配符名称，3：以`*`结尾的通配符名称，它们会分别放入三个不同的hash table中，顺序是从1，2，3的hash table中依次搜索。
 
@@ -163,3 +163,7 @@ could not build the server_names_hash,
 you should increase either server_names_hash_max_size: 512
 or server_names_hash_bucket_size: 32
 ```
+
+
+
+（完）
