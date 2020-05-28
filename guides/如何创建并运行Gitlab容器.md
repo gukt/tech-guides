@@ -33,3 +33,6 @@ gitlab的数据存于宿主机的`/srv/gitlab/`目录中，系统重启后容器
 
 修改成功后使用root用户名和刚刚输入的新密码登陆，成功后将调整到"Welcome to GitLab"页
 
+
+
+（完）

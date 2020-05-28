@@ -12,7 +12,18 @@
 
 以下提供一键脚本运行nginx容器。
 
-NOTE：该脚本同时适用于“自定义镜像（[gukt/nginx:alpine](https://github.com/gukt/docker-images/blob/master/nginx/alpine/Dockerfile)）”和“官方镜像（[nginx:alpine](https://hub.docker.com/layers/nginx/library/nginx/alpine/images/sha256-833d1e074ee086184af1bae1c4cc68aa26ce518588001f84c33164f7a66274b4?context=explore)）”
+NOTE：该脚本同时适用于“自定义镜像（ [gukt/nginx:alpine](https://github.com/gukt/docker-images/blob/master/nginx/alpine/Dockerfile) ）”和“官方镜像（ [nginx:alpine](https://hub.docker.com/layers/nginx/library/nginx/alpine/images/sha256-833d1e074ee086184af1bae1c4cc68aa26ce518588001f84c33164f7a66274b4?context=explore) ）”
+
+如果要使用自定义镜像，请使用如下命令进行编译 image :
+
+```sh
+$ mkdir -p docker-images/nginx
+$ cd docker-images/nginx
+$ wget --no-check-certificate -v https://raw.githubusercontent.com/gukt/docker-images/master/nginx/alpine/Dockerfile
+$ docker build -t gukt/nginx:alpine .
+```
+
+在容器中运行 nginx 的一键脚本：
 
 ```bash
 set +x \
@@ -52,12 +63,9 @@ set +x \
   && echo Done.
 ```
 
-
-
-**NOTE：**
-
-> 1. 利用docker拷贝文件时，父路径必须提前存在。
+> **NOTE**
 >
+> 1. 利用docker拷贝文件时，父路径必须提前存在。
 > 2. 执行cp命令时，`tmp-nginx:/etc/nginx`后面不要加`/`，否则nginx目录会作为`/data/nginx/conf`的子目录，而非拷贝目录下的所有文件。
 
 
@@ -91,3 +99,7 @@ docker kill -s HUP nginx
 ## 4、参考
 
 [^1]:https://github.com/gukt/docker-images/blob/master/nginx/alpine/Dockerfile 
+
+
+
+（完）

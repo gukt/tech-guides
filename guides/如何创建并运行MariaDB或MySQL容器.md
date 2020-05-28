@@ -36,3 +36,6 @@ docker exec -it mariadb mysql -uroot -p
 1. 映射data文件到宿主机的好处是随时可以删除容器再重建（docker rm -f mariadb)，数据一切都正常。
 2. 如果想使用mysql，只需要将mariadb替换成mysql即可。
 
+
+
+（完）

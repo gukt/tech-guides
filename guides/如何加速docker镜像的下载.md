@@ -7,7 +7,9 @@
 3. 中科大 - https://docker.mirrors.ustc.edu.cn
 4. 自己在阿里云申请加速地址
 
-## 开始设置
+
+
+## 1、设置
 
 首先查看当前下载源是什么？
 
@@ -42,14 +44,18 @@ vim /etc/docker/daemon.json
 :wq
 ```
 
-## 重启服务
+
+
+## 2、重启服务
 
 ```sh
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
-## 检查是否设置成功
+
+
+## 3、检查是否设置成功
 
 ```sh
 docker info
@@ -65,5 +71,7 @@ docker info
 ```
 
 以后下载 docker image 速度就会飞快了。
+
+
 
 （完）

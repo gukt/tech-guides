@@ -7,6 +7,7 @@
 首先，在客户端利用 `ssh-keygen` 命令生成秘钥对。
 
 ```sh
+$ cd ~/.ssh
 $ ssh-keygen -t rsa
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/ktgu/.ssh/id_rsa):
@@ -64,7 +65,7 @@ ECDSA key fingerprint is SHA256:Zb+HhA7riuYpuUcBhjQRtSw/0Uv3tyyV63rtZULjy78.
 Are you sure you want to continue connecting (yes/no)?
 ```
 
-提示输入登陆远程主机的密码，输入密码后回车，看到如下提示就表示成功了。
+提示输入`远程主机密码`，输入密码后回车，看到如下提示就表示成功了。
 
 ```sh
 Number of key(s) added:        1
@@ -80,7 +81,7 @@ and check to make sure that only the key(s) you wanted were added.
 `authentication agent` 指的是 `ssh-agent` 高速缓存，MAC 上指的是本地钥匙串。
 
 ```sh
-ssh-add -k ~/.ssh/wow_prod_rsa
+$ ssh-add -k ~/.ssh/wow_prod_rsa
 ```
 
 提示：
@@ -94,6 +95,8 @@ Enter passphrase for /Users/ktgu/.ssh/wow_prod_rsa:
 ```sh
 Identity added: /Users/ktgu/.ssh/wow_prod_rsa (ktgu@ktgus-mac.local)
 ```
+
+如果提示错误，情况下面的 troubleshooting。
 
 
 
@@ -116,7 +119,7 @@ Could not open a connection to your authentication agent.
 解决方案：
 
 ```sh
-ssh-agent bash
+$ ssh-agent bash
 ```
 
 

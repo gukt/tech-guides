@@ -1,4 +1,4 @@
-## 安装及卸载Java
+## 1、安装及卸载Java
 
 ```sh
 #查找已安装的java
@@ -18,7 +18,7 @@ java -version
 
 
 
-## 快速切换Jdk版本
+## 2、快速切换Jdk版本
 
 ```sh
 #打开配置文件
@@ -47,3 +47,6 @@ Java(TM) SE Runtime Environment (build 1.8.0_51-b16)
 
 ```
 
+
+
+（完）

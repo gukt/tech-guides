@@ -1,4 +1,4 @@
-## 初始化
+## 1、初始化
 
 运行如下命令以完成初始化操作
 ``` javascript
@@ -19,7 +19,9 @@ drwxr-xr-x   3 ktgu  staff   102  7 28 13:23 source
 drwxr-xr-x   3 ktgu  staff   102  7 28 13:23 themes
 ```
 
-## 生成文件
+
+
+## 2、生成文件
 
 Hexo生成文件速度非常快，使用如下命令即可生成文件
 ```
@@ -28,7 +30,9 @@ $ hexo generate
 $ hexo g
 ```
 
-## 部署到github
+
+
+## 3、部署到github
 
 Hexo提供了便捷的一键部署功能，并且支持部署到多个目的地，如：Git，HeroKu，Rsync，OpenShift，FTPSync等。下面以部署到github为例：
 
@@ -69,3 +73,6 @@ INFO  Deploy done: git
 
 `http://{github-user-name}.github.io/{repo-name}`
 
+
+
+（完）
