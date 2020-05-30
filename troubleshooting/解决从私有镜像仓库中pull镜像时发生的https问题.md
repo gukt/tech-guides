@@ -8,13 +8,9 @@ Error response from daemon: Get https://laogu.io:15000/v2/: http: server gave HT
 
 
 
-### 问题说明
-
-这是因为私有仓库并未提供 https 方式访问，而 docker pull 默认使用 https 访问仓库。
-
-
-
 ### 解决方案
+
+这是因为私有仓库并未提供 `https` 方式访问，而 `docker pull` 默认使用 `https` 访问仓库。
 
 1. 创建或修改 `/etc/docker/daemon.json` 文件
 
@@ -22,7 +18,7 @@ Error response from daemon: Get https://laogu.io:15000/v2/: http: server gave HT
    { "insecure-registries":["laogu.io:15000"] }
    ```
 
-2. 重启 docker 守护进程
+2. 重启 `docker` 守护进程
 
    ```sh
    $ sudo service docker restart
