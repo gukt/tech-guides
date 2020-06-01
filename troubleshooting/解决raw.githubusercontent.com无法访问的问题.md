@@ -13,7 +13,7 @@
 修改 `/etc/hosts` 文件。
 
 ```sh
-sudo vim /etc/hosts
+$ sudo vim /etc/hosts
 ```
 
 添加如下行：

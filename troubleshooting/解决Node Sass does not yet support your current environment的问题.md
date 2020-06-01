@@ -12,10 +12,10 @@ Error: Node Sass does not yet support your current environment: OS X 64-bit with
 
 ```sh
 # 卸载
-npm uninstall --save node-sass
+$ npm uninstall --save node-sass
 # 清除缓存
-npm cache clean -f
+$ npm cache clean -f
 # 安装
-npm install --save node-sass
+$ npm install --save node-sass
 ```
 
