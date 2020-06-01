@@ -1,11 +1,11 @@
 ## 1、初始化
 
 运行如下命令以完成初始化操作
-``` javascript
+``` sh
 $ hexo init ~/blog && cd ~/blog && npm install
 ```
 
-成功执行后查看文件夹下的内容如下：
+sh成功执行后查看文件夹下的内容如下：
 ```sh
 total 24
 drwxr-xr-x   9 ktgu  staff   306  7 28 13:23 .
@@ -24,7 +24,7 @@ drwxr-xr-x   3 ktgu  staff   102  7 28 13:23 themes
 ## 2、生成文件
 
 Hexo生成文件速度非常快，使用如下命令即可生成文件
-```
+```sh
 $ hexo generate
 或者
 $ hexo g
@@ -40,7 +40,7 @@ Hexo提供了便捷的一键部署功能，并且支持部署到多个目的地�
 > $ cnpm install hexo-deployer-git --save
 
 然后打开_config.yaml文件，修改如下配置：
-```
+```yaml
 ...
 deploy:
   type: git
@@ -48,7 +48,7 @@ deploy:
   branch: gh-pages  
 ```
 然后执行生成并部署
-```
+```sh
 $ hexo g && hexo d
 或者
 $ hexo g --deploy
@@ -57,7 +57,7 @@ $ hexo d --generate
 ```
 
 若成功部署，会看到如下信息：
-```
+```sh
 ...
 To git@github.com:bafeimao/pages.git
 * [new branch]      master -> gh-pages

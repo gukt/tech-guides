@@ -14,7 +14,7 @@
 首先查看当前下载源是什么？
 
 ```sh
-docker info
+$ docker info
 ...
 Registry: https://index.docker.io/v1/
 ...
@@ -25,7 +25,7 @@ Registry: https://index.docker.io/v1/
 打开 `/etc/docker/daemon.json` 文件（该文件也可能没有，没有就创建一个）
 
 ```sh
-vim /etc/docker/daemon.json
+$ vim /etc/docker/daemon.json
 ```
 
 在 registry-mirrors 中添加新的下载地址（如果文件没有就将以下整个内容粘贴进新文件）。
@@ -49,8 +49,8 @@ vim /etc/docker/daemon.json
 ## 2、重启服务
 
 ```sh
-sudo systemctl daemon-reload
-sudo systemctl restart docker
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
 ```
 
 
@@ -58,7 +58,7 @@ sudo systemctl restart docker
 ## 3、检查是否设置成功
 
 ```sh
-docker info
+$ docker info
 ```
 
 如果输出结果中包含如下内容表示设置成功：

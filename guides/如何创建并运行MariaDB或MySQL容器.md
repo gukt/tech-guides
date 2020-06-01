@@ -7,7 +7,7 @@
 镜像：https://hub.docker.com/_/mariadb/
 
 ```bash
-docker run \
+$ docker run \
 	--name mariadb \
 	-p 13306:3306 \
 	-v /data/mariadb/data:/var/lib/mysql \
@@ -25,7 +25,7 @@ docker run \
 ## 2、连接MariaDB
 
 ```bash
-docker exec -it mariadb mysql -uroot -p
+$ docker exec -it mariadb mysql -uroot -p
 输入密码
 ```
 

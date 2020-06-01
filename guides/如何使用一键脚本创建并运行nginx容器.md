@@ -26,7 +26,7 @@ $ docker build -t gukt/nginx:alpine .
 在容器中运行 nginx 的一键脚本：
 
 ```bash
-set +x \
+$ set +x \
 	&& imageName=gukt/nginx:alpine \
 	&& containerName=nginx \
 	&& echo 'step1: 准备工作：创建临时容器并拷贝配置文件' \
@@ -74,7 +74,7 @@ set +x \
 
 ```sh
 #在host机器上运行,显示'it works'表示nginx已正常工作
-curl localhost:10080
+$ curl localhost:10080
 it works
 ```
 
@@ -85,13 +85,13 @@ it works
 可直接在宿主机上以交互方式运行容器中的`nginx -s reload`命令：
 
 ```sh
-docker exec -it nginx nginx -s reload
+$ docker exec -it nginx nginx -s reload
 ```
 
 如果要重新载入 NGINX 可以使用以下命令发送 HUP 信号
 
 ```sh
-docker kill -s HUP nginx
+$ docker kill -s HUP nginx
 ```
 
 

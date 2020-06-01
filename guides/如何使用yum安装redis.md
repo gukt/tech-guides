@@ -1,5 +1,5 @@
 ```sh
-yum -y install redis
+$ yum -y install redis
 
 #启动redis-server
 #注意：默认情况redis-server进程是一个前台进程，即窗口显示控制台输出，一旦启动窗口关闭，则进程也随即退出。

@@ -12,9 +12,9 @@ $ rm -rf /data/jenkins
 
 运行 jenkins 容器：
 
-```
+```sh
 #启动容器
-docker run \
+$ docker run \
   -u root \
   -p 10000:8080 \
   -p 50000:50000 \
@@ -60,7 +60,7 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 也可以查看jenkins_home下的/secrets/initialAdminPassword文件内容，由于容器的jenkins_home目录已经映射到/data/jenkins目录了，所以可以在宿主机上直接查看
 
 ```sh
-cat /data/nginx/secrets/initialAdminPassword
+$ cat /data/nginx/secrets/initialAdminPassword
 ```
 
 
@@ -71,7 +71,7 @@ cat /data/nginx/secrets/initialAdminPassword
 
 ```sh
 # 打开配置文件
-vim /data/jenkins/updates/default.json
+$ vim /data/jenkins/updates/default.json
 
 # 替换所有插件下载的url
 1,$s/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsinghua.edu.cn\/jenkins/g
@@ -83,13 +83,13 @@ vim /data/jenkins/updates/default.json
 :wq
 
 #重启jenkins容器
-docker restart jenkins
+$ docker restart jenkins
 ```
 
 第二种方式：
 
 ```sh
-sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsinghua.edu.cn\/jenkins/g' /data/jenkins/updates/default.json && sed -i 's/http:\/\/www.google.com/https:\/\/www.baidu.com/g' /data/jenkins/updates/default.json
+$ sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsinghua.edu.cn\/jenkins/g' /data/jenkins/updates/default.json && sed -i 's/http:\/\/www.google.com/https:\/\/www.baidu.com/g' /data/jenkins/updates/default.json
 
 #重启jenkins容器
 docker restart jenkins

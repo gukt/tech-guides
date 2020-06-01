@@ -5,7 +5,7 @@
 ## 1、运行容器
 
 ```sh
-docker run \
+$ docker run \
 	-d \
   --hostname git.laogu.io \
   -p 10080:80 \
