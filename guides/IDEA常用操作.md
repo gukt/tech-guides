@@ -1,4 +1,4 @@
-### 设置项目使用 IDEA 编译，而不是 gradle 编译，以提高编译速度
+## 设置项目使用 IDEA 编译，而不是 gradle 编译，以提高编译速度
 
 打开 `Preferences` -> `Build, Execution, Deployment` -> `Build Tools` -> `Gradle`。
 
@@ -6,13 +6,13 @@
 
 
 
-### 使 lombok 生效，启用 Annotation Processing
+## 使 lombok 生效，启用 Annotation Processing
 
 打开 `Preferences` ，搜索 `Annotation Processors` ，选择 `Enable Annotation Processing` 
 
 
 
-### 设置空的类或接口定义后面的花括号放在一行
+## 设置空的类或接口定义后面的花括号放在一行
 
 打开 `Preferences` -> `Editor` -> `Code Style -Java` -> `Wraping and Bracces` 。
 
@@ -20,7 +20,7 @@
 
 
 
-### 启用 SpringBoot 的 devtools
+## 启用 SpringBoot 的 devtools
 
 1. 打开 `build.gradle` 文件，在 `dependencies` 中添加依赖项：`compile("org.springframework.boot:spring-boot-devtools")`
 
@@ -39,7 +39,7 @@
 
 
 
-### 创建代码作者，创建时间等信息的模板
+## 创建代码作者，创建时间等信息的模板
 
 打开 IDEA 的 `Preferences` -> `Editor` -> `File and live templates`，选择 `Includes` ，在 `File Header` 的右侧填写
 
@@ -50,4 +50,14 @@
  * @version 1.0
  */
 ```
+
+
+
+## 阻止Unterminated statement警告
+
+打开 `Pereference -> Editor -> Code Style -> Inspections`
+
+搜索 `Unterminated statement` ，将对勾去掉。
+
+![image-20200604143737459](https://raw.githubusercontent.com/gukt/images/master/github/imagesimage-20200604143737459.png)
 

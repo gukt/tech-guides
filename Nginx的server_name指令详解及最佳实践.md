@@ -78,7 +78,7 @@ server {
 
 名称还可以是`_`，**表示捕获所有无效的名称**，这些无效的名称比如`--`，`!@#`
 
-```
+```nginx
 server {
     listen       80  default_server;
     server_name  _;
