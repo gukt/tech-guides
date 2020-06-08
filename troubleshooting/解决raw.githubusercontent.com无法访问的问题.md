@@ -1,14 +1,12 @@
-## 原因
+## 问题描述
 
-域名被DNS污染了。
+github 仓库中的图片经常打不开，图片地址以 `https://raw.githubusercontent.com/` 开头，原因是 `raw.githubusercontent.com` 域名被 DNS 污染了。
 
 
 
 ## 解决方案
 
-进入[这个网站](https://site.ip138.com/raw.Githubusercontent.com/)查看域名被解析到的地址。
-
-找一个ping 值最低的 IP 地址，比如 `151.101.76.133 中国 香港`
+进入[这个网站](https://site.ip138.com/raw.Githubusercontent.com/)查看域名被解析到的地址，找一个ping 值最低的 IP 地址，比如 `151.101.76.133 中国 香港`（记住这个 IP 地址）
 
 修改 `/etc/hosts` 文件。
 
@@ -16,7 +14,7 @@
 $ sudo vim /etc/hosts
 ```
 
-添加如下行：
+添加一条映射：
 
 ```sh
 151.101.76.133 raw.githubusercontent.com

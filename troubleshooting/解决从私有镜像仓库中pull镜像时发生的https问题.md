@@ -1,4 +1,4 @@
-### 问题描述
+## 问题描述
 
 当执行 `docker pull laogu.io:15000/gukt/wow-api:latest` 时，抛出如下错误：
 
@@ -8,7 +8,7 @@ Error response from daemon: Get https://laogu.io:15000/v2/: http: server gave HT
 
 
 
-### 解决方案
+## 解决方案
 
 这是因为私有仓库并未提供 `https` 方式访问，而 `docker pull` 默认使用 `https` 访问仓库。
 

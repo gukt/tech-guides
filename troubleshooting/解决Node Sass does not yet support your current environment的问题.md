@@ -1,4 +1,4 @@
-### 问题描述：
+## 问题描述
 
 ```
 Error: Node Sass does not yet support your current environment: OS X 64-bit with Unsupported runtime (72) 
@@ -6,7 +6,7 @@ Error: Node Sass does not yet support your current environment: OS X 64-bit with
 
 
 
-### 解决方案：
+## 解决方案
 
 错误是说不支持当前环境，卸载掉重新安装即可。
 
