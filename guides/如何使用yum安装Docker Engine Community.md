@@ -9,7 +9,7 @@
 在安装 docker-ce之前，首先要安装必要的依赖。
 
 ```sh
-$ sudo yum install -y 
+$ sudo yum install -y \
   yum-utils \
   device-mapper-persistent-data \
   lvm2

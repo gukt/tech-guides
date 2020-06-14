@@ -27,7 +27,7 @@ gitlab的数据存于宿主机的`/srv/gitlab/`目录中，系统重启后容器
 
 ## 2、测试验证
 
-现在，可以通过http://localhost:10001（或域名）访问容器中启动的gitlab
+现在，可以通过http://localhost:10080（或域名）访问容器中启动的gitlab
 
 呈现的网页中要求我们输入新密码，输入后点击"change your password"按钮。
 
