@@ -241,3 +241,11 @@ now.getTime() // 1593013216800
 2. `getYear`, `setYear` 已经废弃，虽然浏览器还支持它，但不建议使用。
 3. 调用那些不带 `UTC` 的方法名，一般都是基于本地时间的；如果想基于 `UTC` 时间，使用那些带 `UTC` 的方法。
 4. 以“分别指定时间各部分”的方式构造 `Date` 实例时，默认是基于本地时间的，如果要想基于 `UTC` 时间，可以将各时间参数先传入 `Date.UTC()` 方法，通过该方法返回的时间戳，再传给 `new Date(timestamp)` 创建。
+
+
+
+## 5、参考
+
+1. [MDN: JavaScript 标准内置对象 Date](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
+2. [moment.js 时间处理库](http://momentjs.cn/)
+
