@@ -4,59 +4,62 @@
 
 ## 1、生成密钥对
 
-首先，在客户端利用 `ssh-keygen` 命令生成秘钥对。
+使用 `ssh-keygen` 命令，生成秘钥对。
 
 ```sh
 $ cd ~/.ssh
-$ ssh-keygen -t rsa
-Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/ktgu/.ssh/id_rsa):
+$ ssh-keygen -t rsa -f wow_s1_rsa
 ```
 
-提示输入文件名，默认为 `id_rsa`，我们一般取一个方便识别的名称，比如：`github_rsa` 。
-
-> 也可以指定 -f 参数指定密钥对名称： `ssh-keygen -t rsa -f github_rsa`
-
-输入名称后回车，接着会提示连续两次输入密码，输入密码完成后回车，出现以下提示说明创建`秘钥对`成功了。
+输入密码，成功后出现以下提示。
 
 ```sh
-Your identification has been saved in wow_prod_rsa.
-Your public key has been saved in wow_prod_rsa.pub.
+Your identification has been saved in wow_s1_rsa.
+Your public key has been saved in wow_s1_rsa.pub.
 The key fingerprint is:
-SHA256:3QaqoYEzEQZTxvdlLzAwRw7aacPihpQXtRvm4q1iE+o ktgu@ktgus-mac.local
+SHA256:cciDNly/bIaYvquXhgw3L28SANM52BHLBzquuUNSZKQ root@b76ef9634888
 The key's randomart image is:
 +---[RSA 2048]----+
-|o+=.=+o          |
-| +o=o*+ o        |
-| o+o*=.= ..      |
-|.o.=o.+ .o.o     |
-|. *..o. S.. o    |
-| o.ooo o   .     |
-|. .....          |
-|.+  .            |
-|oEo.             |
+| ==+    .        |
+|++Bo . + o       |
+|E=o.. = = o      |
+|..o. . + * .     |
+| o .  o S =      |
+|oo. +.   o       |
+|=  + =..         |
+|..  = *.         |
+|..  .O+.         |
 +----[SHA256]-----+
 ```
 
-成功后，会生成两个文件 `wow_prod_rsa`、`wow_prod_rsa.pub`（如果是首次生成秘钥对，还会多生成一个 `know_hosts` 文件）
-
-限制对私钥文件的访问，只有您能读取此密钥，且任何人都不能向其写入。
+至此，生成秘钥对文件成功。
 
 ```sh
-$ chmod 400 ~/.ssh/wow_prod_rsa
+$ ls
+wow_s1_rsa  wow_s1_rsa.pub
+```
+
+限制对私钥文件的访问，只有当前创建密钥对的用户才能读取，任何人都不能向其写入。
+
+```sh
+$ chmod 400 ~/.ssh/wow_s1_rsa
 ```
 
 
 
 ## 2、将公钥拷贝到远程机器主机
 
-如果端口不是默认的 `22`，使 `-p` 参数指定端口；如果要指定具体的文件名使用 `-i` 参数，默认文件名为 `id_rsa.pub`
+可使用 ssh-copy-id 命令将公钥拷贝到远程主机。
 
 ```sh
-$ ssh-copy-id -i ~/.ssh/wow_prod_rsa.pub root@domain.com
+$ ssh-copy-id -i ~/.ssh/wow_s1_rsa.pub root@domain.com
 ```
 
-上面的`ssh-copy-id` 命令会将公钥文件附加到远程机器的 `~/.ssh/authorized_keys` 文件中（如果没有文件或目录，会在远程主机上自动创建）
+`-i` 参数用户指定待拷贝的公钥文件。默认名称为 `id_rsa.pub`。
+
+如果端口不是默认的 `22`，使 `-p` 参数指定。
+
+命令执行成功后，公钥文件内容被附加到远程主机的  `~/.ssh/authorized_keys` 文件中，如果该文件在远程主机上不存在，会自动创建。
 
 看到以下提示，输入 `yes` 回车
 
@@ -65,13 +68,11 @@ ECDSA key fingerprint is SHA256:Zb+HhA7riuYpuUcBhjQRtSw/0Uv3tyyV63rtZULjy78.
 Are you sure you want to continue connecting (yes/no)?
 ```
 
-提示输入`远程主机密码`，输入密码后回车，看到如下提示就表示成功了。
+输入密码，看到如下提示就表示成功了。
 
 ```sh
 Number of key(s) added:        1
-
-Now try logging into the machine, with:   "ssh 'root@domain.com'"
-and check to make sure that only the key(s) you wanted were added.
+...
 ```
 
 
