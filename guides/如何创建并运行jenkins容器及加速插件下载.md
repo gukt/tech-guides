@@ -8,7 +8,7 @@ $ rm -rf /data/jenkins
 
 ## 1、启动容器
 
-关于jenkins 的详细安装及说明请参考官方文档：https://jenkins.io/zh/doc/book/installing/#docker。
+关于 jenkins 的详细安装及说明请参考官方文档：https://jenkins.io/zh/doc/book/installing/#docker。
 
 运行 jenkins 容器：
 
@@ -27,13 +27,13 @@ $ docker run \
 
 说明：
 
-官网推荐使用jenkinsci/blueocean镜像，该镜像包含当前的长期支持 (LTS) 的Jenkins版本 （可以投入使用） ，捆绑了所有Blue Ocean插件和功能。这意味着你不需要单独安装Blue Ocean插件。
+官网推荐使用 `jenkinsci/blueocean` 镜像，该镜像包含当前的长期支持 (LTS) 的 Jenkins 版本 （可以投入使用） ，捆绑了所有 `Blue Ocean` 插件和功能。这意味着你不需要单独安装 `Blue Ocean` 插件。
 
-当然了，也可以使用其他镜像：https://hub.docker.com/r/jenkins/jenkins/，这个是基于LTS版本的每周更新，
+当然了，也可以使用其他镜像：https://hub.docker.com/r/jenkins/jenkins/，这个是基于 LTS 版本的每周更新，
 
 > 注意：标记official的那个镜像（https://hub.docker.com/_/jenkins）已经deprecated（被废弃）了。
 
-5000端口与JNLP有关，请见：https://github.com/jenkinsci/docker/blob/master/README.md
+`5000` 端口与 `JNLP` 有关，请见：https://github.com/jenkinsci/docker/blob/master/README.md
 
 
 
@@ -55,9 +55,9 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 ...
 ```
 
-输出结果中的 59e6a6c810014d3aa8ac83cc27e6e38d 就是初始密码。
+输出结果中的 `59e6a6c810014d3aa8ac83cc27e6e38d` 就是初始密码。
 
-也可以查看jenkins_home下的/secrets/initialAdminPassword文件内容，由于容器的jenkins_home目录已经映射到/data/jenkins目录了，所以可以在宿主机上直接查看
+也可以查看 `jenkins_home` 下的 `/secrets/initialAdminPassword` 文件内容，由于容器的 `jenkins_home` 目录已经映射到 `/data/jenkins` 目录了，所以可以在宿主机上直接查看
 
 ```sh
 $ cat /data/nginx/secrets/initialAdminPassword
@@ -65,7 +65,7 @@ $ cat /data/nginx/secrets/initialAdminPassword
 
 
 
-## 3、加速Jenkins插件下载
+## 3、加速 Jenkins 插件下载
 
 第一种方式：
 
