@@ -1,10 +1,10 @@
-搜索redis镜像，使用stars数最高的那个
+搜索 redis 镜像，使用 stars 数最高的那个
 
 ```sh
 $ docker search redis
 ```
 
-运行redis容器
+运行 redis 容器
 
 ```sh
 $ docker run \

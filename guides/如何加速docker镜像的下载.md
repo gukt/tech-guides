@@ -20,7 +20,7 @@ Registry: https://index.docker.io/v1/
 ...
 ```
 
-输出内容中的 Registry 就是当前 image 下载地址。
+输出内容中的 `Registry` 就是当前 image 的下载地址。
 
 打开 `/etc/docker/daemon.json` 文件（该文件也可能没有，没有就创建一个）
 

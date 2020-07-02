@@ -37,7 +37,7 @@ NOTE: 也可以选择阿里云镜像（http://mirrors.aliyun.com/docker-ce/linux
 
 ## 3、开始安装
 
-安装最新版本的`docker-ce`、`docker-ce-cli`、`containerd.io`
+安装最新版本的 `docker-ce`、`docker-ce-cli`、`containerd.io`
 
 ```sh
 $ sudo yum install -y docker-ce docker-ce-cli containerd.io

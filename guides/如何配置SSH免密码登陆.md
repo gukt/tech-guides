@@ -50,7 +50,7 @@ $ chmod 400 ~/.ssh/wow_prod_rsa
 
 ## 2、将公钥拷贝到远程机器主机
 
-如果端口不是默认的 22，使 `-p` 参数指定端口；如果要指定具体的文件名使用 `-i` 参数，默认文件名为 `id_rsa.pub`
+如果端口不是默认的 `22`，使 `-p` 参数指定端口；如果要指定具体的文件名使用 `-i` 参数，默认文件名为 `id_rsa.pub`
 
 ```sh
 $ ssh-copy-id -i ~/.ssh/wow_prod_rsa.pub root@domain.com
@@ -78,7 +78,7 @@ and check to make sure that only the key(s) you wanted were added.
 
 ## 3、将私钥添加到 authentication agent
 
-`authentication agent` 指的是 `ssh-agent` 高速缓存，MAC 上指的是本地钥匙串。
+`authentication agent` 指的是 `ssh-agent` 高速缓存，`Mac` 上指的是本地钥匙串。
 
 ```sh
 $ ssh-add -k ~/.ssh/wow_prod_rsa
@@ -110,7 +110,7 @@ $ ssh root@domain.com
 
 ## 5、Troubleshooting
 
-执行ssh-add时可能出现以下错误：
+执行 `ssh-add` 时可能出现以下错误：
 
 ```sh
 Could not open a connection to your authentication agent.

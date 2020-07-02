@@ -39,7 +39,7 @@ $ docker run \
 
 ## 2、访问 jenkins 
 
-容器成功运行后，我们就可以在浏览器中输入`浏览：http://localhost:10000`进行登录了，此时会出现"解锁Jenkins"界面出现。
+容器成功运行后，我们就可以在浏览器中输入`http://localhost:10000`进行登录了，此时会出现 `解锁Jenkins` 界面出现。
 
 我们可以通过如下命令获得初始密码：
 
@@ -65,7 +65,7 @@ $ cat /data/nginx/secrets/initialAdminPassword
 
 
 
-## 3、加速 Jenkins 插件下载
+## 3、加速 jenkins 插件下载
 
 第一种方式：
 

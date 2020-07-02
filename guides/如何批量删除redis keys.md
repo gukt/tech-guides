@@ -1,6 +1,6 @@
 ## 1、批量删除 redis keys（本地）
 
-使用如下命令可以删除本地 redis 服务器中指定 pattern 的 keys。
+使用如下命令可以删除本地 `redis` 服务器中指定 `pattern` 的 `keys`。
 
 ```sh
 $ redis-cli keys cache* | xargs ./redis-cli del
