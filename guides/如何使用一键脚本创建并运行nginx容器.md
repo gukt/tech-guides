@@ -29,36 +29,38 @@ $ docker build -t gukt/nginx:alpine .
 $ set +x \
 	&& imageName=gukt/nginx:alpine \
 	&& containerName=nginx \
+	&& defaultHttpPort=10080 \
 	&& echo 'step1: 准备工作：创建临时容器并拷贝配置文件' \
 	&& echo "正在备份旧的映射目录..." \
-	&& cp -R /data/nginx /data/backup/nginx-$(date +"%Y-%m-%d-%H-%M-%S" ) | true \
+	&& mkdir -p /data/backup \
+	&& cp -R /data/$containerName /data/backup/$containerName-$(date +"%Y-%m-%d-%H-%M-%S" ) | true \
 	&& echo '正在准备空的映射目录...' \
-	&& rm -rf /data/nginx | true; mkdir -p /data/nginx \
+	&& rm -rf /data/$containerName | true; mkdir -p /data/$containerName \
 	&& echo '正在尝试删除旧的tmp-nginx容器（如果没有则继续执行）...' \
 	&& docker rm -f tmp-nginx | true \
 	&& echo '运行nginx临时容器...' \
 	&& docker run --name tmp-nginx -d $imageName \
 	&& echo '从容器中拷贝所有配置文件到本地映射目录...' \
-	&& docker cp tmp-nginx:/etc/nginx /data/nginx/conf \
-	&& docker cp tmp-nginx:/usr/share/nginx/html /data/nginx/html \
-	&& echo 'It works.' > /data/nginx/html/index.html \
+	&& docker cp tmp-nginx:/etc/nginx /data/$containerName/conf \
+	&& docker cp tmp-nginx:/usr/share/nginx/html /data/$containerName/html \
+	&& echo 'It works.' > /data/$containerName/html/index.html \
 	&& echo '删除临时容器...' \
 	&& docker rm -f tmp-nginx \
 	&& echo Done. \
 	&& echo '======================' \
 	&& echo 'step2: 运行正式容器...' \
 	&& echo '正在尝试删除旧的nginx容器（如果没有则继续执行）...' \
-	&& docker rm -f nginx | true \
+	&& docker rm -f $containerName | true \
 	&& echo '开始创建正式容器...' \
 	&& docker run \
        -d \
-       -p 10080:80 \
+       -p $defaultHttpPort:80 \
        -p 443:443 \
        -p 10086:86 \
        --name $containerName \
-       -v /data/nginx/html:/usr/share/nginx/html \
-       -v /data/nginx/conf:/etc/nginx \
-       -v /data/nginx/logs:/var/log/nginx \
+       -v /data/$containerName/html:/usr/share/nginx/html \
+       -v /data/$containerName/conf:/etc/nginx \
+       -v /data/$containerName/logs:/var/log/nginx \
        $imageName \
   && echo Done.
 ```
