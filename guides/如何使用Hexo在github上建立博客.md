@@ -1,6 +1,6 @@
 ## 1、初始化
 
-运行如下命令以完成初始化操作
+运行如下命令以完成初始化操作：
 ``` sh
 $ hexo init ~/blog && cd ~/blog && npm install
 ```
@@ -23,7 +23,8 @@ drwxr-xr-x   3 ktgu  staff   102  7 28 13:23 themes
 
 ## 2、生成文件
 
-Hexo生成文件速度非常快，使用如下命令即可生成文件
+Hexo生成文件速度非常快，使用如下命令即可生成文件：
+
 ```sh
 $ hexo generate
 或者
@@ -36,7 +37,7 @@ $ hexo g
 
 Hexo提供了便捷的一键部署功能，并且支持部署到多个目的地，如：Git，HeroKu，Rsync，OpenShift，FTPSync等。下面以部署到github为例：
 
-首先要安装hexo-deployer-git插件
+首先要安装hexo-deployer-git插件。
 > $ cnpm install hexo-deployer-git --save
 
 然后打开_config.yaml文件，修改如下配置：
@@ -47,7 +48,7 @@ deploy:
   repo: git@github.com:bafeimao/pages1.git
   branch: gh-pages  
 ```
-然后执行生成并部署
+然后执行生成并部署：
 ```sh
 $ hexo g && hexo d
 或者
@@ -65,7 +66,7 @@ Branch master set up to track remote branch gh-pages from git@github.com:bafeima
 INFO  Deploy done: git
 ```
 
-**注意**：如部署失败，默认不显示任何错误信息，你可以加上--debug参数查看详情
+**注意**：如部署失败，默认不显示任何错误信息，你可以加上--debug参数查看详情。
 
 > $ hexo d --debug
 

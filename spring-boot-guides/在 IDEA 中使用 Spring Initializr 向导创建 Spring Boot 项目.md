@@ -2,7 +2,7 @@
 
 本文简单介绍如何利用 Intellij IDEA 的 Spring Initializr 向导创建 Spring Boot 单模块项目。
 
-本文源代码：
+本文源代码：https://github.com/gukt/spring-boot-guides/tree/master/sbg-scaffold
 
 
 
