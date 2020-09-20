@@ -1,16 +1,16 @@
-自 JDK 8开始，引入了 [Optional](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html) 对象，用以表示一个方法返回值、或一个变量有可能为 null。它能帮我们的代码减少出现 NullPointerException 的机会。
+自 JDK 8开始，引入了 [Optional](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html) 对象，用以表示一个方法返回值、或一个变量有可能为 `null`。它能帮我们的代码减少出现 `NullPointerException` 的机会。
 
-Optional 在语义上更精确，且提供很多便利的方法，可以让我们简化代码，使其更优雅、易读。
+`Optional` 在语义上更精确，且提供很多便利的方法，可以让我们简化代码，使其更优雅、易读。
 
-另外，主流 IDE 、或代码静态检查工具，也提供对 Optional 不严谨使用的地方做静态检查，并会提示警告信息。
+另外，主流 IDE 、或代码静态检查工具，也提供对 `Optional` 不严谨使用的地方做静态检查，并会提示警告信息。
 
 本文内容主要包括：
 
-- 如何实例化一个 Optional 对象？
-- 两个 Optional 对象之间的比较。
+- 如何实例化一个 `Optional` 对象？
+- 两个 `Optional` 对象之间的比较。
 - 如何获取值，提供默认值，抛出异常等。
 - 值过滤、值映射。
-- 将传统的层层嵌套判断简化为使用 Optional 链式调用。
+- 将传统的层层嵌套判断简化为使用 `Optional` 链式调用。
 - 一些实践建议。
 
 
@@ -332,8 +332,14 @@ User findByName(String name) {
 
 ## 总结
 
-不建议在字段，方法或构造器的参数中使用 Optional ，如果方法的返回值可能为 null，则建议使用 Optional 作为返回值类型。
+不建议在字段，方法或构造器的参数中使用 `Optional` ，如果方法的返回值可能为 `null`，则建议使用 `Optional` 作为返回值类型。
 
-在使用 JDK 序列化机制的环境中，要考虑到 Optional 并没有实现 Serializer 接口。
+在使用 JDK 序列化机制的环境中，要考虑到 `Optional` 并没有实现 `Serializer` 接口。
 
-在实例化 Optional 时，如果逻辑上明确 value 一定是不能为 null 的，则强烈建议使用 of 静态方法，反之，使用 ofNullable 静态方法。
+在实例化 `Optional` 时，如果逻辑上明确值一定不能为 `null` 时，则强烈建议使用 `of` 静态方法，反之，使用 `ofNullable` 静态方法。
+
+
+
+## 参考
+
+1. [Optional 官方文档](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Optional.html) 

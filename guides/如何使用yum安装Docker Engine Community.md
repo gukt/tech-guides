@@ -28,10 +28,10 @@ yum默认仓库中不包含`docker-ce`、`docker-ce-cli`、`containerd.io`，所
 ```sh
 $ sudo yum-config-manager \
     --add-repo \
-    https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo
+    http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 ```
 
-NOTE: 也可以选择阿里云镜像（http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo）
+NOTE: 也可以选择 https://mirrors.ustc.edu.cn/docker-ce/linux/centos/docker-ce.repo
 
 
 

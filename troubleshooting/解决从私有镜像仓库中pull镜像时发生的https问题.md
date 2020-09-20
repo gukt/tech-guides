@@ -1,6 +1,6 @@
 ## 问题描述
 
-当执行 `docker pull laogu.io:15000/gukt/wow-api:latest` 时，抛出如下错误：
+当 docker 从远程私有仓库中 pull 镜像时，抛出如下错误：
 
 ```sh
 Error response from daemon: Get https://laogu.io:15000/v2/: http: server gave HTTP response to HTTPS client
@@ -11,6 +11,8 @@ Error response from daemon: Get https://laogu.io:15000/v2/: http: server gave HT
 ## 解决方案
 
 这是因为私有仓库并未提供 `https` 方式访问，而 `docker pull` 默认使用 `https` 访问仓库。
+
+在**需要执行 `docker pull` 的主机**上执行以下操作：
 
 1. 创建或修改 `/etc/docker/daemon.json` 文件
 
