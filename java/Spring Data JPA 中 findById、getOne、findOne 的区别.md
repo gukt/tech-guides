@@ -1,6 +1,6 @@
-你是不是经常对 findById、getOne、findOne 感到迷惑，继而不知道在具体什么样的场景中选择哪个？
+使用 Spring Data JPA 时，经常会看到 `findById`、`getOne`、`findOne` 三个方法。
 
-从字面上理解他们都是从数据中根据 ID 获取单条信息，但是他们的底层获取机制、返回值类型、以及抛异常的机制都是不一样的。
+从字面上理解，他们都是从数据中根据 `ID` 获取单个实体对象，但他们的底层获取机制、返回值类型、以及抛异常的机制是不一样的。
 
 
 
@@ -8,7 +8,7 @@
 
 `findById` 方法会立即（`EAGER`）访问数据库，并返回和 `ID` 关联的真实对象，如果没有找到，则返回 `Optional.empty()`。
 
-该方法的定义如下：
+方法的定义如下：
 
 ```java
 public interface CrudRepository<T, ID> extends Repository<T, ID> {	
@@ -29,7 +29,7 @@ public interface CrudRepository<T, ID> extends Repository<T, ID> {
 
 `getOne` 方法并不会立即访问数据库，返回一个代理（`proxy`）对象，这个代理对象是对实体对象的引用。它是一个延迟加载方法。只有使用代理对象访问对象属性时才会去访问数据库并获取指定 `ID` 对应的真实对象，如果找不到，则抛出 `EntityNotFoundException`。
 
-该方法的定义如下：
+方法的定义如下：
 
 ```java
 public interface JpaRepository<T, ID> extends PagingAndSortingRepository<T, ID>, QueryByExampleExecutor<T> {
@@ -51,7 +51,7 @@ public interface JpaRepository<T, ID> extends PagingAndSortingRepository<T, ID>,
 
 # `findOne` 方法
 
-除了 `findById`、`getOne` 外，Spring Data JPA 还有两个 `findOne` 方法：
+除了 `findById`、`getOne` 外，`Spring Data JPA` 还有两个 `findOne` 方法：
 
 - `Optional<T> findOne(@Nullable Specification<T> spec)`
 
@@ -85,9 +85,9 @@ public interface JpaSpecificationExecutor<T> {
 }
 ```
 
-他们都是返回 `Optional` 对象，且都是 `EGAER`（立即） 访问数据库并获取相应实体对象的。
+他们都是返回 `Optional` 对象的，且都是 `EGAER`（立即） 访问数据库，获取相应实体对象。
 
-由此我们可以看出：以 `find` 开头的方法返回的都是 `Optional` 对象，且都是**立即访问数据库**的。
+**综上总结**：以 `find` 开头的方法会立即访问数据库，且返回 `Optional` 对象。
 
 
 
@@ -144,16 +144,16 @@ public Comment addComment(long postId) {
 }
 ```
 
-上面的代码中，如果使用的是 `findById`，则 SQL 输出为：
+上面的代码中，如果使用的是 `findById`，则 `SQL` 输出为：
 
-```
+```sql
 select id, title from t_posts where id=? 
 insert into t_comments (id, content, postId) values (?, ?, ?)
 ```
 
-如果使用的是 `getOne`，则 SQL 输出为：
+如果使用的是 `getOne`，则 `SQL` 输出为：
 
-```
+```sql
 insert into t_comments (id, content, postId) values (?, ?, ?)
 ```
 
