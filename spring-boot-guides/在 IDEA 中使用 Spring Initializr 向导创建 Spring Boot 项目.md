@@ -32,13 +32,13 @@
 
 2. Maven POM,  (Generate a Maven pom.xml.)
 
-3. Gradle Project(Generate a Gradle based project archive.)
+3. **Gradle Project(Generate a Gradle based project archive.)**
 
 4. Gradle Config, (Generate a Gradle build file .)
 
 如果选择 `#2` 或 `#4` ，创建项目后，仅创建 `pom.xml` 文件或 `build.gradle` 文件；而选择 `#1` 或 `#3`，会创建基于 `maven` 或 `gradle` 管理的项目结构，及相关文件。
 
-我们使用 `Gradle` 且希望自动创建所需的项目结构，所以，`Type` 选择选项 `#3`。
+我们使用 `Gradle` 且希望自动创建所需的项目结构，所以，**`Type` 选择选项 `#3`**。
 
 `Language` 设置为 `Java`，可选项有：`Java`、`Kotlin`、`Groovy`。
 
