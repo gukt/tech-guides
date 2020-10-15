@@ -1,4 +1,4 @@
-## 1、安装gcc
+# 安装 gcc
 
 ```sh
 $ yum install -y gcc
@@ -6,7 +6,7 @@ $ yum install -y gcc
 
 
 
-## 2、下载源文件
+# 下载源文件
 
 ```sh
 $ xz -d glibc-2.17.tar.xz 
@@ -18,7 +18,7 @@ $ cd build
 
 
 
-## 3、编译、安装
+# 编译、安装
 
 ```sh
 $ ../configure --prefix=/usr --disable-profile --enable-add-ons --with-headers=/usr/include --with-binutils=/usr/bin
@@ -31,7 +31,7 @@ make[1]: Leaving directory `/root/glibc-2.17'
 
 
 
-## 4、查看是否安装成功
+# 查看是否安装成功
 
 ```sh
 $ ldd --version

@@ -1,14 +1,12 @@
-如果是全新安装，考虑是否要将旧版本映射的目录删除掉
+# 启动容器
+
+关于 jenkins 的详细安装及说明请参考官方文档：https://jenkins.io/zh/doc/book/installing/#docker。
+
+如果是全新安装，考虑是否要将旧版本映射的目录删除掉：
 
 ```sh
 $ rm -rf /data/jenkins
 ```
-
-
-
-## 1、启动容器
-
-关于 jenkins 的详细安装及说明请参考官方文档：https://jenkins.io/zh/doc/book/installing/#docker。
 
 运行 jenkins 容器：
 
@@ -37,7 +35,7 @@ $ docker run \
 
 
 
-## 2、访问 jenkins 
+# 访问 jenkins 
 
 容器成功运行后，我们就可以在浏览器中输入`http://localhost:10000`进行登录了，此时会出现 `解锁Jenkins` 界面出现。
 
@@ -65,7 +63,7 @@ $ cat /data/nginx/secrets/initialAdminPassword
 
 
 
-## 3、加速 jenkins 插件下载
+# 加速 jenkins 插件下载
 
 第一种方式：
 
